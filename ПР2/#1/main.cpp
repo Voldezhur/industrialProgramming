@@ -1,51 +1,10 @@
 // Задача с классом треугольника
+// Чтобы связать с классом:
+// g++ -o main main.cpp Triangle.cpp && ./main
 
 
+#include "Triangle.h"
 #include <iostream>
-#include <math.h>
-
-// Класс треугольника
-class Triangle
-{
-private:
-    double a, b, c;
-
-public:
-    // Объявить значения сторон
-    void set(double _a, double _b, double _c)
-    {
-        a = _a;
-        b = _b;
-        c = _c;
-    }   
-
-    // Вывести значения сторон
-    void show()
-    {
-        std::cout << "a:" << a << "; b:" << b << "; c:" << c;
-    }
-
-    // Существует ли треугольник
-    bool exst_tr()
-    {
-        return (a + b > c && a + c > b && b + c > a);
-    }
-
-    // Периметр
-    double perimeter()
-    {
-        return(a + b + c);
-    }
-
-    // Площадь
-    double area()
-    {
-        double p = this->perimeter() / 2;
-
-        return(sqrt(p * (p - a) * (p - b) * (p - c)));
-    }
-};
-
 
 int main()
 {
