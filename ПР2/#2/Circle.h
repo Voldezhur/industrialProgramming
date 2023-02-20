@@ -20,13 +20,13 @@ public:
     Можно ли описать окружность вокруг треугольника
     со сторонами a, b, c
     */
-    bool triangle_around(float a, float b, float c);
+    bool triangle_around(double a, double b, double c);
 
     /*
     Можно ли вписать в окружность треугольник
     со сторонами a, b, c
     */   
-    bool triangle_in(float a, float b, float c);
+    bool triangle_in(double a, double b, double c);
 
     /*
     Пересекается ли с данной окружностью 
