@@ -34,16 +34,20 @@ float Circle::area()
 */
 bool Circle::triangle_around(double a, double b, double c)
 {
-
+    Triangle A(a, b, c);
+    
+    return(radius == (a*b*c)/4*A.area());
 }
 
 /*
-Можно ли вписать в окружность треугольник
-со сторонами a, b, c
+Можно ли вписать в треугольник со сторонами a, b, c
+окружность
 */   
 bool Circle::triangle_in(double a, double b, double c)
 {
     Triangle A(a, b, c);
+
+    return(radius == A.area()/A.perimeter()/2);
 }
 
 /*
