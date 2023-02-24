@@ -1,6 +1,6 @@
 // Задача с классом окружности
 // Чтобы связать с классом:
-// g++ -o main main.cpp Triangle.cpp && ./main
+// g++ -o main main.cpp Triangle.cpp Circle.cpp && ./main
 
 
 #include <iostream>
