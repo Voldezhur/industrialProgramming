@@ -18,4 +18,13 @@ public:
 
     // Возвращает значение квадратого многочлена, если подставить x1 в X
     double find_Y(double x1);
+
+    // Получение параметров
+    double get_a();
+    double get_b();
+    double get_c();
+    double get_D();
+
+    // Вывод уравнения
+    void print();
 };
