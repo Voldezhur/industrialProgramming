@@ -28,3 +28,5 @@ public:
     // Вывод уравнения
     void print();
 };
+
+eq2 operator + (eq2 A, eq2 B);

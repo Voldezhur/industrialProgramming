@@ -78,19 +78,20 @@ double eq2::get_D()
     Результат - многочлен, с параметрами, 
     являющимися суммами параметров введенных многочленов
 */ 
-/*eq2 operator + (eq2 A, eq2 B)
+eq2 operator + (eq2 A, eq2 B)
 {
     eq2 temp(A.get_a() + B.get_a(), A.get_b() + B.get_b(), A.get_c() + B.get_c());
 
     return temp;
-}*/
+}
 
+// Вывод многочлена в виде квадратного уравнения
 void eq2::print()
 {
-    std::cout << a << "a ";
+    std::cout << a << "x^2 ";
     
     if(b > 0) std::cout << '+'; 
-    std::cout << b << "b ";
+    std::cout << b << "x ";
 
     if(c > 0) std::cout << '+';
     std::cout << c << '\n';

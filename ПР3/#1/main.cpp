@@ -6,15 +6,6 @@
 #include "eq2.h"
 
 
-// Перегрузка оператора + для работы с многочленами
-eq2 operator + (eq2 A, eq2 B)
-{
-    eq2 temp(A.get_a() + B.get_a(), A.get_b() + B.get_b(), A.get_c() + B.get_c());
-
-    return temp;
-}
-
-
 int main()
 {
     // Ввод коэффициентов первого уравнения
