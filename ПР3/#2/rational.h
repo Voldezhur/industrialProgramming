@@ -7,6 +7,9 @@ class rational
     bool canExist;
 
 public:
+    // Конструктор по умолчанию
+    rational();
+    
     // Конструктор
     rational(int a1, int b1);
 

@@ -8,14 +8,35 @@
 
 int main()
 {
-    int _a, _b;
     
-    std::cout << "Введите числитель и знаменатель дроби через пробел:\n";
-    std::cin >> _a >> _b;
+    // Создание динамического массива
+    int n;
 
-    rational rat1(_a, _b);
+    std::cout << "Введите размер массива: ";
+    std::cin >> n;
 
-    rat1.show();
+    rational* A = new rational;
+    
+    
+    // Занесение элементов в массив
+    for(int i = 0; i < n; i++)
+    {
+        int _a, _b;
 
-    std:: cout << '\n';
+        std::cout << "\nВведите числитель и знаменатель дроби через пробел:\n";
+        std::cin >> _a >> _b;
+
+        A[i].set(_a, _b);
+    }
+
+    // Вывод элементов массива
+    std::cout << "Введенные дроби:'\n";
+
+    for(int i = 0; i < n; i++)
+    {
+        A[i].show();
+        std::cout << '\n';
+    }
+
+    delete[] A;
 }
