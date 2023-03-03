@@ -28,6 +28,7 @@ public:
     
     rational operator++(int);
     
+    rational operator+ (rational B);
 
     friend rational operator - (rational A, rational B);
 };
@@ -35,5 +36,3 @@ public:
 bool operator== (rational A, rational B);
 
 rational operator> (rational A, rational B);
-
-rational operator + (rational A, rational B);

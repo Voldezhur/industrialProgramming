@@ -145,10 +145,10 @@ int rational::get_b()
 // Перегрузки
 
 // Перегрузка оператора +
-rational operator + (rational A, rational B)
+rational rational::operator+ (rational B)
 {
     // Приведение к общему знаменателю
-    rational sum(A.get_a() * B.get_b() + B.get_a() * A.get_b(), A.get_b() * B.get_b());
+    rational sum(a * B.get_b() + B.get_a() * b, b * B.get_b());
     return sum;
 }
 
