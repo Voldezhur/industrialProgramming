@@ -4,6 +4,20 @@
 #include <iostream>
 #include "rational.h"
 
+// Поиск наибольшего общего делителя
+int nod(int a, int b){
+    while(a != b){
+        if(a > b){
+            a -= b;
+        }
+        
+        else{
+            b -= a;
+        }
+    }
+
+    return a;
+}
 
 // Конструктор по умолчанию
 rational::rational()
@@ -36,10 +50,12 @@ rational::rational(int a1, int b1)
     if(canExist && a != 0)
     {
         // Проверка на кратность числителя и знаменателя
-        if(a % b == 0)
+        int ratNOD = nod(a, b);
+
+        if(ratNOD != 1)
         {
-            a /= b;
-            b /= b;
+            a /= ratNOD;
+            b /= ratNOD;
         }
 
         // Проверка, чтобы числитель был не больше знаменателя
@@ -49,10 +65,12 @@ rational::rational(int a1, int b1)
         }
 
         // Проверка на кратность знаменателя и числителя
-        if(b % a == 0)
+        ratNOD = nod(b, a);
+        
+        if(ratNOD != 1)
         {
-            b /= a;
-            a /= a;
+            b /= ratNOD;
+            a /= ratNOD;
         }
     }
 }
@@ -80,10 +98,12 @@ void rational::set(int a1, int b1)
     if(canExist && a != 0)
     {
         // Проверка на кратность числителя и знаменателя
-        if(a % b == 0)
+        int ratNOD = nod(a, b);
+
+        if(ratNOD != 1)
         {
-            a /= b;
-            b /= b;
+            a /= ratNOD;
+            b /= ratNOD;
         }
 
         // Проверка, чтобы числитель был не больше знаменателя
@@ -92,10 +112,13 @@ void rational::set(int a1, int b1)
             a %= b;
         }
 
-        if(b % a == 0)
+        // Проверка на кратность знаменателя и числителя
+        ratNOD = nod(b, a);
+        
+        if(ratNOD != 1)
         {
-            b /= a;
-            a /= a;
+            b /= ratNOD;
+            a /= ratNOD;
         }
     }
 }
