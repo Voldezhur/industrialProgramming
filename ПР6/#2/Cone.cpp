@@ -64,3 +64,25 @@ double Cone::Volume()
 {
     return M_PI * radius*radius * height / 3;
 }
+
+// Функции получения параметров
+double Cone::Get_x()
+{
+    return x;
+}
+double Cone::Get_y()
+{
+    return y;
+}
+double Cone::Get_z()
+{
+    return z;
+}
+double Cone::Get_rad()
+{
+    return radius;
+}
+double Cone::Get_h()
+{
+    return height;
+}

@@ -63,7 +63,7 @@ double CutCone::Area()
 // Объем
 double CutCone::Volume()
 {
-    return 1/3 * M_PI * height * (pow(radius2, 2) + radius2 * radius + pow(radius, 2));
+    return 1.0/3.0 * M_PI * height * (radius2*radius2 + radius2 * radius + radius*radius);
 }
 
 // Перегрузка вывода
@@ -73,17 +73,45 @@ std::ostream &operator<<(std::ostream &stream, CutCone obj)
     stream << "Радиус основания: " << obj.radius << '\n';
     stream << "Радиус верхнего основания: " << obj.radius2 << '\n';
     stream << "Высота конуса: " << obj.height << '\n';
+    stream << "Площадь поверхности конуса: " << obj.Area() << '\n';
+    stream << "Объем конуса: " << obj.Volume() << '\n';
+
+    return stream;
 }
 
 // Перегрузка ввода
-std::istream &operator>>(std::istream &stream, CutCone obj)
+std::istream &operator>>(std::istream &stream, CutCone& obj)
 {
-    std::cout << "\nВведите координаты центра основания конуса:\n";
+    std::cout << "Введите координаты центра основания конуса:\n";
     stream >> obj.x >> obj.y >> obj.z;
 
-    std::cout << "Введите радиус  нижнего и верхнего оснований\n";
+    std::cout << "Введите радиус нижнего и верхнего оснований\n";
     stream >> obj.radius >> obj.radius2;
 
     std::cout << "Введите высоту\n";
     stream >> obj.height;
+
+    return stream;
+}
+
+// Перегрузка операторов сравнения
+bool CutCone::operator<(CutCone cone)
+{
+    return (this->Volume() < cone.Volume() ? true : false);
+}
+bool CutCone::operator>(CutCone cone)
+{
+    return (this->Volume() > cone.Volume() ? true : false);
+}
+bool CutCone::operator<=(CutCone cone)
+{
+    return (this->Volume() <= cone.Volume() ? true : false);
+}
+bool CutCone::operator>=(CutCone cone)
+{
+    return (this->Volume() >= cone.Volume() ? true : false);
+}
+bool CutCone::operator==(CutCone cone)
+{
+    return (this->Volume() == cone.Volume() ? true : false);
 }

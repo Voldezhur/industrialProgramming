@@ -1,7 +1,9 @@
 #include "Cone.h"
+#include <iostream>
 
-class CutCone: public Cone
+class CutCone : public Cone
 {
+protected:
     double radius2;
 
 public:
@@ -25,9 +27,14 @@ public:
     // Объем
     double Volume();
 
-    // Перегрузка оператора вывода
+    // Перегрузка операторов ввода/вывода
     friend std::ostream &operator<<(std::ostream &stream, CutCone obj);
+    friend std::istream &operator>>(std::istream &stream, CutCone& obj);
 
-    // Перегрузка оператора ввода
-    friend std::istream &operator>>(std::istream &stream, CutCone obj);
+    // Перегрузка операторов сравнения
+    bool operator >(CutCone cone);
+    bool operator <(CutCone cone);
+    bool operator <=(CutCone cone);
+    bool operator >=(CutCone cone);
+    bool operator ==(CutCone cone);
 };

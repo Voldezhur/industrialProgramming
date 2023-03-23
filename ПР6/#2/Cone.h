@@ -1,4 +1,5 @@
 // Класс конусов
+#pragma once
 
 class Cone
 {
@@ -31,4 +32,11 @@ public:
 
     // Объем конуса
     double Volume();
+
+    // Функции получения параметров
+    double Get_x();
+    double Get_y();
+    double Get_z();
+    double Get_rad();
+    double Get_h();
 };
