@@ -14,7 +14,4 @@ public:
 
     // Перегрузка оператора вывода
     friend std::ostream &operator<<(std::ostream &stream, Ocean& obj);
-
-    // Функции получения параметров
-    std::string Get_name();
 };

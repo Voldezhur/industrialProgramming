@@ -18,6 +18,14 @@ Sea::Sea(std::string _name)
     parent = nullptr;
 }
 
+Sea::Sea(std::string _name, Ocean* _parent)
+{
+    name = _name;
+    depth = size = 0;
+
+    parent = _parent;
+}
+
 Sea::Sea(std::string _name, int _depth, int _size)
 {
     name = _name;
@@ -52,7 +60,7 @@ std::ostream &operator<<(std::ostream &stream, Sea& obj)
         parentName = "Внутреннее море";
     }
 
-    std::cout << "В каком водоеме находится - " << parentName << '\n';
+    std::cout << "В каком океане находится - " << parentName << '\n';
 
     obj.Print();
 
@@ -63,4 +71,10 @@ std::ostream &operator<<(std::ostream &stream, Sea& obj)
 void Sea::Set_parent(Ocean _parent)
 {
     parent = &_parent;
+}
+
+// Функции получения параметров
+Ocean* Sea::Get_parent()
+{
+    return parent;
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Reservoir.h"
 #include "Ocean.h"
 #include <string>
@@ -12,6 +14,7 @@ public:
     // Конструкторы
     Sea();
     Sea(std::string _name);
+    Sea(std::string _name, Ocean* parent);
     Sea(std::string _name, int _depth, int _size);
     Sea(std::string _name, int _depth, int _size, Ocean* parent);
 
@@ -20,4 +23,7 @@ public:
 
     // Функции ввода параметров
     void Set_parent(Ocean _parent);
+
+    // Функции получения параметров
+    Ocean* Get_parent();
 };

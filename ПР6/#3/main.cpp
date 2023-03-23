@@ -1,23 +1,27 @@
-// g++ -o main main.cpp Sea.cpp Ocean.cpp Reservoir.cpp && ./main
+// g++ -o main main.cpp Bay.cpp Sea.cpp Ocean.cpp Reservoir.cpp && ./main
 
 #include "Ocean.h"
 #include "Sea.h"
+#include "Bay.h"
 #include <iostream>
 #include <string>
 
 
 int main()
 {
-    Ocean ocean1("Pacific");
-    std::cout << ocean1;
+    // Создание Тихого океана
+    Ocean ocean1("Pacific", 11022, 165200000);
+    std::cout << ocean1 << '\n';
 
-    std::cout << '\n';
+    // Создание Охотского моря
+    Sea sea1("Okhotskoe", 3372, 1583000, &ocean1);
+    std::cout << sea1 << '\n';
 
-    Sea sea1;
-    std::cout << sea1;
+    // Создание залива Шелихова
+    Bay bay1("Shelikhov", 350, 130000, &sea1);
+    std::cout << bay1 << '\n';
 
-    std::cout << "\nПосле введения моря в океан\n\n";
-
-    sea1.Set_parent(ocean1);
-    std::cout << sea1;
+    // Создание внутреннего моря
+    Sea sea2("Caspian", 1025, 371000);
+    std::cout << sea2 << '\n';
 }

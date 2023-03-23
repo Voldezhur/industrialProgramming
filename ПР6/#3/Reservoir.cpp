@@ -26,8 +26,8 @@ Reservoir::Reservoir(std::string _name, int _depth, int _size)
 void Reservoir::Print()
 {
     std::cout << "Название водоема: " << name << '\n';
-    std::cout << "Глубина водоема: " << depth << '\n';
-    std::cout << "Размер водоема: " << size << '\n';
+    std::cout << "Глубина водоема: " << depth << " метров\n";
+    std::cout << "Размер водоема: " << size << " кв километров\n";
 }
 
 // Перегрузка оператора ввода
@@ -43,4 +43,10 @@ std::istream &operator>>(std::istream &stream, Reservoir& obj)
     stream >> obj.size;
 
     return stream;
+}
+
+// Функции получения параметров
+std::string Reservoir::Get_name()
+{
+    return name;
 }

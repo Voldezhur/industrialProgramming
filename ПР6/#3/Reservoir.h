@@ -20,4 +20,7 @@ public:
 
     // Перегрузка оператора ввода
     friend std::istream &operator>>(std::istream &stream, Reservoir& obj);
+
+    // Функции получения параметров
+    std::string Get_name();
 };

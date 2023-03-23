@@ -29,9 +29,3 @@ std::ostream &operator<<(std::ostream &stream, Ocean& obj)
 
     return stream;
 }
-
-// Функции получения параметров
-std::string Ocean::Get_name()
-{
-    return name;
-}
